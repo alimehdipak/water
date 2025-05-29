@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# If the URL doesn't have an extension and matches a .php file, serve the .php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
